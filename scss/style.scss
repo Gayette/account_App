@@ -1,0 +1,21 @@
+
+#nav {
+  ul {
+    list-style-type: none;
+    li {
+      float: left;
+      + li {
+        margin-left: 1em; 
+// Espacer les éléments
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+ 
