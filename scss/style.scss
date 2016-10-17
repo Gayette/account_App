@@ -1,21 +1,95 @@
+/*$bkgColor: #4e6060;
+$navColor: #2a3333;
+$accountsize: 500px;
 
 #nav {
-  ul {
-    list-style-type: none;
-    li {
-      float: left;
-      + li {
-        margin-left: 1em; 
-// Espacer les éléments
-      }
-    }
-  }
-  a {
-    text-decoration: none;
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-  }
+	ul {	
+	  list-style-type: none;	  
+	}
+	  li a {
+	  	  display: inline;
+    	  color: $navColor;
+    	  text-align: center;
+    	  padding: 14px 16px;
+    	  text-decoration: none;
+	  }
 }
- 
+
+#accountOption {
+	ul {
+	  list-style-type: none;
+	}
+	  li a {
+    	  color: $navColor;
+    	  text-decoration: none;
+	  }
+	  	ul, li, a {
+  		border: 1px solid $ColorBlue;
+  	}  	
+}
+
+#tab {	  
+	ul, li, a {
+  		border: 1px solid $ColorBlue;
+  	}  	
+	th, td {
+	  border: 1px solid $navColor;
+	  border-collapse: collapse;
+	  color: $navColor;	
+	}
+}
+}*/
+
+$bkgColor: #232323;
+$navColor: #204444;
+$ColorDark: #000000;
+$ColorLight: #EAEAEA;
+$ColorBlue: #40BAC8; 
+
+body {
+	background-color: $ColorLight;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#nav {
+	background-color: $ColorBlue;
+	height: auto;
+	ul {
+		list-style: none;
+	}
+		li a {
+			display: inline-block;
+			color: $ColorDark;
+			text-decoration: none;
+		}
+		  ul, li, a {
+	  	  border: 1px solid $ColorBlue;
+  	}  	
+}
+
+#accountOption {
+	ul {
+	  list-style-type: none;
+	}
+	  li a {
+    	  color: $navColor;
+    	  text-decoration: none;
+	  }
+	  	ul, li, a {
+  		border: 1px solid $ColorBlue;
+  	}  	
+}
+
+#tab {
+	ul, li, a {
+  		border: 1px solid $ColorBlue;
+  	}  	
+	th, td {
+	  border: 1px solid $navColor;
+	  border-collapse: collapse;
+	  color: $navColor;	
+	}
+}
