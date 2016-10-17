@@ -1,12 +1,76 @@
-#nav ul {
+/*$bkgColor: #4e6060;
+$navColor: #2a3333;
+$accountsize: 500px;
+
+#nav {
+	ul {	
+	  list-style-type: none;	  
+	}
+	  li a {
+	  	  display: inline;
+    	  color: $navColor;
+    	  text-align: center;
+    	  padding: 14px 16px;
+    	  text-decoration: none;
+	  }
+}
+
+#accountOption {
+	ul {
+	  list-style-type: none;
+	}
+	  li a {
+    	  color: $navColor;
+    	  text-decoration: none;
+	  }
+	  	ul, li, a {
+  		border: 1px solid $ColorBlue;
+  	}  	
+}
+
+#tab {	  
+	ul, li, a {
+  		border: 1px solid $ColorBlue;
+  	}  	
+	th, td {
+	  border: 1px solid $navColor;
+	  border-collapse: collapse;
+	  color: $navColor;	
+	}
+}
+}*/
+body {
+  background-color: #EAEAEA;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; }
+
+#nav {
+  background-color: #40BAC8;
+  height: auto; }
+  #nav ul {
+    list-style: none; }
+  #nav li a {
+    display: inline-block;
+    color: #000000;
+    text-decoration: none; }
+  #nav ul, #nav li, #nav a {
+    border: 1px solid #40BAC8; }
+
+#accountOption ul {
   list-style-type: none; }
-  #nav ul li {
-    float: left; }
-    #nav ul li + li {
-      margin-left: 1em; }
-#nav a {
+#accountOption li a {
+  color: #204444;
   text-decoration: none; }
-  #nav a:hover, #nav a:focus {
-    text-decoration: underline; }
+#accountOption ul, #accountOption li, #accountOption a {
+  border: 1px solid #40BAC8; }
+
+#tab ul, #tab li, #tab a {
+  border: 1px solid #40BAC8; }
+#tab th, #tab td {
+  border: 1px solid #204444;
+  border-collapse: collapse;
+  color: #204444; }
 
 /*# sourceMappingURL=style.css.map */
