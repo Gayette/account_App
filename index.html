@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html  lang="fr">
+<html ng-app='app'>
 
 <head>
   <title>Account</title>
@@ -10,92 +11,122 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
 
 </head>
 
 <body>
 
-  <div id="nav">
-    <ul>
-      <li><a id="home" href="#">Home</a></li>
-      <li><a id="connexion" href="#">Connection</a></li>
-    </ul>
-  </div>  
+  <header class="site-header">
+      <a href="#0" class="logo">Logo</a>
+    <nav class="site-nav">
+      <ul>
+        <li class="active"><a href="#0">Compte #01</a></li>
+        <li><a href="#0">Switch</a></li>
+      </ul>
+    </nav>
+    <div class="account-actions">
+      <a href="#" class="sign-out-link">Machine</a>
+      <a href="#" class="sign-out-link">deconnection</a>
+    </div>
+  </header>
 
-<div id="accountOption">
-    <ul>
-      <li><a href="javascript:void(0)" class="tablinks" onclick="openOption(event, 'Compte')" id="defaultOpen">Compte</a></li>
-      <li><a href="javascript:void(0)" class="tablinks" onclick="openOption(event, 'Dettes')">Dettes</a></li>
-      <li><a href="javascript:void(0)" class="tablinks" onclick="openOption(event, 'Prets')">Prets</a></li>
-    </ul>
+<div class="container">
+  <div id="accountOption">
+      <ul>
+        <li><a href="javascript:void(0)" class="tablinks" onclick="openOption(event, 'Compte')" id="defaultOpen">Recapitulatif</a></li>
+        <li><a href="javascript:void(0)" class="tablinks" onclick="openOption(event, 'details')">Détails par users</a></li>
+        <li><a href="javascript:void(0)" class="tablinks" onclick="openOption(event, 'equilibre')">Equilibre</a></li>
+      </ul>
+    </div> 
+
+
+    <div id="tab">
+        <div id="Compte" class="tabcontent">
+          <button onclick="this.parentElement.style.display='none'" class="topright">x</button>
+        <table  ng-controller="usersCtrl">
+          <tr>
+            <th>Noms</th>
+            <th>Montants</th> 
+            <th>Descriptions</th>
+            <th>Dates</th>
+            <th>Concernant</th>
+            <th>Parts</th>
+          </tr>
+              <tr>
+                <td ng-repeat="user in usersData"> {{user.username}}</td>
+                <td>$20</td>
+                <td>de la terre</td>
+                <td>00/00/00</td>
+                <td><a href="#">Machin</a> et <a href="#">Crapule</a></td>
+                <td>$15</td>
+              </tr>
+                  <tr>
+                    <td>Crapule</td>
+                    <td>$20</td>
+                    <td>une chaussure</td>
+                    <td>00/00/00</td>
+                    <td><a href="#">Machin</a> et <a href="#">Truc</a></td>
+                    <td>$15</td>    
+                  </tr>
+               <tr>
+                 <td>Crapule</td>
+                 <td>$20</td>
+                 <td>une chaussure</td>
+                 <td>00/00/00</td>
+                 <td><a href="#">Machin</a> et <a href="#">Truc</a></td>
+                 <td>$15</td>    
+               </tr>
+                  <tr>
+                    <td>Crapule</td>
+                    <td>$20</td>
+                    <td>une chaussure</td>
+                    <td>00/00/00</td>
+                    <td><a href="#">Machin</a> et <a href="#">Truc</a></td>
+                    <td>$15</td>    
+                  </tr>        
+        </table>
+        </div> 
+
+        <div id="details" class="tabcontent">
+            <button onclick="this.parentElement.style.display='none'" class="topright">x</button>
+            <table>
+              <tr>
+                <th>nom</th>
+                <th>details</th>
+                <th>date</th>
+                <th>total</th>
+              </tr>
+                <tr>
+                  <td>tintin</td>
+                  <td>20</td>
+                  <td>00/00/00</td>
+                  <td>160</td>
+                </tr>
+            </table>
+          </div>
+
+        <div id="equilibre" class="tabcontent">
+            <button onclick="this.parentElement.style.display='none'" class="topright">x</button>
+              <div id="bloc">
+              </div>  
+        </div>      
+    </div>  
+
+
+        <div id="optbtn">
+          <button>Ajouter User(s)</button>
+          <button>Modifier compte</button>
+        </div>              
 </div>
 
-<div id="tab">
-    <div id="Compte" class="tabcontent">
-      <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
-      <table style="width:100%">
-      <tr>
-        <th>solde</th>
-        <th>dettes</th> 
-        <th>prets</th>
-        <th>noms</th>
-        <th>date</th>
-        <th>total</th>
-      </tr>
-          <tr>
-            <td>150</td>
-            <td>20</td>
-            <td>10</td>
-            <td>dudul</td>
-            <td>00/00/00</td>
-            <td>160</td>
-          </tr>
-           <tr>
-            <td>150</td>
-            <td>20</td>
-            <td>10</td>
-            <td>dudul</td>
-            <td>00/00/00</td>
-            <td>160</td>
-          </tr>
-           <tr>
-            <td>150</td>
-            <td>20</td>
-            <td>10</td>
-            <td>dudul</td>
-            <td>00/00/00</td>
-            <td>160</td>
-          </tr>
-      </table>
-    </div>
-
-    <div id="Dettes" class="tabcontent">
-      <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
-      <table style="width:100%">
-      <tr>
-          <th>nom</th>
-          <th>details</th>
-          <th>date</th>
-          <th>total</th>
-        </tr>
-          <tr>
-            <td>tintin</td>
-            <td>20</td>
-            <td>00/00/00</td>
-            <td>160</td>
-          </tr>
-      </table>
-    </div>
-
-    <div id="Prets" class="tabcontent">
-      <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
-      <h3>Prets</h3>
-      <p>...</p>
-    </div>
-</div>
-
-  <script src="js/script.js"></script> 
+  <footer>
+    <p>~fuckedUp~</p>
+  </footer>  
+  
+   <script src="lib/angular.min.js"></script>
+   <script src="js/app.js"></script>
+   <script src="js/script.js"></script> 
 </body>
 
 </html>
