@@ -1,76 +1,140 @@
-/*$bkgColor: #4e6060;
-$navColor: #2a3333;
-$accountsize: 500px;
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+body {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0; }
 
-#nav {
-	ul {	
-	  list-style-type: none;	  
-	}
-	  li a {
-	  	  display: inline;
-    	  color: $navColor;
-    	  text-align: center;
-    	  padding: 14px 16px;
-    	  text-decoration: none;
-	  }
-}
+.site-header {
+  display: flex;
+  align-items: center;
+  background: #0D1313;
+  color: white; }
+  @media (max-width: 600px) {
+    .site-header {
+      flex-wrap: wrap; }
+      .site-header .site-nav {
+        background: #222;
+        border: 2;
+        flex-basis: 100%; }
+        .site-header .site-nav a {
+          font-size: 1rem; }
+      .site-header .account-actions {
+        margin-left: auto; } }
+
+.logo {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px; }
+
+.site-nav {
+  text-align: center;
+  flex: 1; }
+  .site-nav > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-flex; }
+  .site-nav .active a {
+    background: #16473a;
+    color: #5DCCAF; }
+  .site-nav a {
+    color: #E2E6E7;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: bold; }
+
+.account-actions {
+  display: flex;
+  align-items: center;
+  padding-right: 10px; }
+  .account-actions a {
+    color: #E2E6E7;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+    font-size: 1.0rem;
+    font-weight: bold; }
+
+/*.sign-out-link {
+  font-size: 0.8rem;
+}*/
+.container {
+  margin-left: 50px; }
 
 #accountOption {
-	ul {
-	  list-style-type: none;
-	}
-	  li a {
-    	  color: $navColor;
-    	  text-decoration: none;
-	  }
-	  	ul, li, a {
-  		border: 1px solid $ColorBlue;
-  	}  	
-}
-
-#tab {	  
-	ul, li, a {
-  		border: 1px solid $ColorBlue;
-  	}  	
-	th, td {
-	  border: 1px solid $navColor;
-	  border-collapse: collapse;
-	  color: $navColor;	
-	}
-}
-}*/
-body {
-  background-color: #EAEAEA;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%; }
-
-#nav {
-  background-color: #40BAC8;
-  height: auto; }
-  #nav ul {
-    list-style: none; }
-  #nav li a {
-    display: inline-block;
-    color: #000000;
+  width: 1000px;
+  margin-top: 100px; }
+  #accountOption ul {
+    list-style-type: none; }
+  #accountOption li a {
+    color: #222;
+    background-color: #5DCCAF;
     text-decoration: none; }
-  #nav ul, #nav li, #nav a {
-    border: 1px solid #40BAC8; }
+  #accountOption ul, #accountOption li, #accountOption a {
+    display: inline-block; }
 
-#accountOption ul {
-  list-style-type: none; }
-#accountOption li a {
-  color: #204444;
-  text-decoration: none; }
-#accountOption ul, #accountOption li, #accountOption a {
-  border: 1px solid #40BAC8; }
+#tab {
+  width: 1000px;
+  margin-left: 30px;
+  float: left;
+  background-color: #222; }
+  #tab button {
+    background-color: #222;
+    float: right; }
+  #tab table {
+    width: 100%; }
+  #tab th {
+    background-color: #0D1313;
+    color: white;
+    font-size: 20px; }
+  #tab tr:nth-child(even) > td:nth-child(even),
+  #tab tr:nth-child(odd) > td:nth-child(odd) {
+    color: #222;
+    background-color: #5DCCAF; }
+  #tab tr:nth-child(even) > td:nth-child(odd),
+  #tab tr:nth-child(odd) > td:nth-child(even) {
+    color: #EAEAEA;
+    background-color: #222; }
+  #tab td {
+    border-left: solid #777 1px;
+    padding: 5px; }
+  #tab td:first-child {
+    border-left: 0px; }
+  #tab a {
+    color: #e20d0d;
+    text-decoration: none; }
 
-#tab ul, #tab li, #tab a {
-  border: 1px solid #40BAC8; }
-#tab th, #tab td {
-  border: 1px solid #204444;
-  border-collapse: collapse;
-  color: #204444; }
+#bloc {
+  width: 1000px;
+  height: 200px;
+  background-color: #222; }
+
+#optbtn {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px; }
+  #optbtn button {
+    width: 100px;
+    height: auto;
+    margin: 2px;
+    margin-left: 20px;
+    padding: 5px;
+    border-style: none;
+    background-color: #5DCCAF;
+    font-size: 10px;
+    color: #222; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #0D1313;
+  text-align: center;
+  color: white; }
 
 /*# sourceMappingURL=style.css.map */

@@ -23,7 +23,78 @@
     </ul>
   </div>  
 
-  
+<div id="accountOption">
+    <ul>
+      <li><a href="javascript:void(0)" class="tablinks" onclick="openOption(event, 'Compte')" id="defaultOpen">Compte</a></li>
+      <li><a href="javascript:void(0)" class="tablinks" onclick="openOption(event, 'Dettes')">Dettes</a></li>
+      <li><a href="javascript:void(0)" class="tablinks" onclick="openOption(event, 'Prets')">Prets</a></li>
+    </ul>
+</div>
+
+<div id="tab">
+    <div id="Compte" class="tabcontent">
+      <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+      <table style="width:100%">
+      <tr>
+        <th>solde</th>
+        <th>dettes</th> 
+        <th>prets</th>
+        <th>noms</th>
+        <th>date</th>
+        <th>total</th>
+      </tr>
+          <tr>
+            <td>150</td>
+            <td>20</td>
+            <td>10</td>
+            <td>dudul</td>
+            <td>00/00/00</td>
+            <td>160</td>
+          </tr>
+           <tr>
+            <td>150</td>
+            <td>20</td>
+            <td>10</td>
+            <td>dudul</td>
+            <td>00/00/00</td>
+            <td>160</td>
+          </tr>
+           <tr>
+            <td>150</td>
+            <td>20</td>
+            <td>10</td>
+            <td>dudul</td>
+            <td>00/00/00</td>
+            <td>160</td>
+          </tr>
+      </table>
+    </div>
+
+    <div id="Dettes" class="tabcontent">
+      <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+      <table style="width:100%">
+      <tr>
+          <th>nom</th>
+          <th>details</th>
+          <th>date</th>
+          <th>total</th>
+        </tr>
+          <tr>
+            <td>tintin</td>
+            <td>20</td>
+            <td>00/00/00</td>
+            <td>160</td>
+          </tr>
+      </table>
+    </div>
+
+    <div id="Prets" class="tabcontent">
+      <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+      <h3>Prets</h3>
+      <p>...</p>
+    </div>
+</div>
+
   <script src="js/script.js"></script> 
 </body>
 
