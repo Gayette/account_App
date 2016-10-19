@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app='app'>
+
+<head>
+       
+</head>
+
+<body ng-controller="usersCtrl">
+
+      <ul>
+        <li ng-repeat="user in usersData">
+          {{user.username}}
+        </li>
+      </ul>
+
+         <script src="angular.min.js"></script>
+         <script src="app.js"></script>
+</body>
+</html>
+
