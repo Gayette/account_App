@@ -1,95 +1,182 @@
-/*$bkgColor: #4e6060;
-$navColor: #2a3333;
-$accountsize: 500px;
 
-#nav {
-	ul {	
-	  list-style-type: none;	  
-	}
-	  li a {
-	  	  display: inline;
-    	  color: $navColor;
-    	  text-align: center;
-    	  padding: 14px 16px;
-    	  text-decoration: none;
-	  }
-}
-
-#accountOption {
-	ul {
-	  list-style-type: none;
-	}
-	  li a {
-    	  color: $navColor;
-    	  text-decoration: none;
-	  }
-	  	ul, li, a {
-  		border: 1px solid $ColorBlue;
-  	}  	
-}
-
-#tab {	  
-	ul, li, a {
-  		border: 1px solid $ColorBlue;
-  	}  	
-	th, td {
-	  border: 1px solid $navColor;
-	  border-collapse: collapse;
-	  color: $navColor;	
-	}
-}
-}*/
-
-$bkgColor: #232323;
-$navColor: #204444;
-$ColorDark: #000000;
+$dark: #0D1313;
+$navColor: #222;
+$Colorblue: #5DCCAF;
 $ColorLight: #EAEAEA;
-$ColorBlue: #40BAC8; 
+$linkColor: #e20d0d;
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
 
 body {
-	background-color: $ColorLight;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0;
 }
 
-#nav {
-	background-color: $ColorBlue;
-	height: auto;
-	ul {
-		list-style: none;
-	}
-		li a {
-			display: inline-block;
-			color: $ColorDark;
-			text-decoration: none;
-		}
-		  ul, li, a {
-	  	  border: 1px solid $ColorBlue;
-  	}  	
+.site-header {
+  display: flex;
+  align-items: center;
+  background: $dark;
+  color: white;
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+    .site-nav {
+      background: $navColor;
+      border: 2;
+      flex-basis: 100%;
+      a {
+        font-size: 1rem;
+      }
+    }
+    .account-actions {
+      margin-left: auto;
+    }
+  }
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.site-nav {
+  text-align: center;
+  flex: 1;
+  > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-flex;
+  }
+  .active {
+    a {
+      background: darken($Colorblue, 40%);
+      color: $Colorblue;
+    }
+  }
+  a {
+    color: #E2E6E7;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+}
+
+.account-actions {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  		a{
+  		color: #E2E6E7;
+    	text-decoration: none;
+    	padding: 20px;
+    	display: inline-block;
+    	font-size: 1.0rem;
+    	font-weight: bold;	
+  		}
+}
+
+/*.sign-out-link {
+  font-size: 0.8rem;
+}*/
+
+.container {
+	margin-left: 50px;
 }
 
 #accountOption {
+		width: 1000px;
+
+		margin-top: 100px;
 	ul {
 	  list-style-type: none;
 	}
 	  li a {
     	  color: $navColor;
+    	  background-color: $Colorblue;
     	  text-decoration: none;
 	  }
 	  	ul, li, a {
-  		border: 1px solid $ColorBlue;
+	  	display: inline-block;	
+  		
   	}  	
 }
 
 #tab {
-	ul, li, a {
-  		border: 1px solid $ColorBlue;
-  	}  	
-	th, td {
-	  border: 1px solid $navColor;
-	  border-collapse: collapse;
-	  color: $navColor;	
+		width: 1000px;
+		margin-left: 30px;
+		float: left;
+		background-color: $navColor;
+	button {
+		background-color: $navColor;
+		float: right;
 	}
+
+		table {
+			width: 100%;
+		}
+		  th {
+		  	background-color: $dark;
+		  	color: white; 
+		  	font-size: 20px;
+		  }
+				tr:nth-child(even) > td:nth-child(even),
+				tr:nth-child(odd) > td:nth-child(odd){
+					color: $navColor;
+					background-color: $Colorblue;
+				}
+				tr:nth-child(even) > td:nth-child(odd),
+				tr:nth-child(odd) > td:nth-child(even){
+					color: $ColorLight;
+					background-color: $navColor;
+				}
+						td {
+							border-left:solid #777 1px;
+							padding:5px;
+						}
+				td:first-child {
+					border-left:0px;
+				}
+					a {
+					color: $linkColor;
+	    	  		text-decoration: none;
+					}			
+}
+
+#bloc {
+	width: 1000px;
+	height: 200px;
+	background-color: $navColor; 
+}
+
+#optbtn {
+	display: flex;
+	flex-direction: column;
+	margin-top: 40px;
+		button {
+			width: 100px;
+			height: auto;
+			margin: 2px;
+			margin-left: 20px;
+			padding: 5px;
+			border-style: none;
+			background-color: $Colorblue;
+			font-size: 10px;
+			color: $navColor;
+		}
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	background: $dark;
+	text-align: center;
+	color: white; 
 }
