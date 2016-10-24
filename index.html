@@ -15,21 +15,24 @@
 
 </head>
 
-<body>
+<body  ng-controller="usersCtrl">
 
   <header class="site-header">
       <a href="#0" class="logo">Logo</a>
+
     <nav class="site-nav">
       <ul>
-        <li class="active"><a href="#0">Compte #01</a></li>
+        <li class="active"><a href="index.html">userGroup</a></li>
         <li><a href="#0">Switch</a></li>
       </ul>
     </nav>
+
     <div class="account-actions">
       <a href="#" class="sign-out-link">Machine</a>
-      <a href="#" class="sign-out-link">deconnection</a>
+      <a href="connect.html" class="sign-out-link">connection</a>
     </div>
   </header>
+
 
 <div class="container">
   <div id="accountOption">
@@ -38,14 +41,20 @@
         <li><a href="javascript:void(0)" class="tablinks" onclick="openOption(event, 'details')">Détails par users</a></li>
         <li><a href="javascript:void(0)" class="tablinks" onclick="openOption(event, 'equilibre')">Equilibre</a></li>
       </ul>
-    </div> 
+  </div> 
 
 
-    <div id="tab" ng-controller="usersCtrl">
-        <div id="Compte" class="tabcontent">
-          <button onclick="this.parentElement.style.display='none'" class="topright">x</button>
+  <div id="tab" ng-controller="depenseCtrl">
+      <div id="Compte" class="tabcontent">
+        <button onclick="this.parentElement.style.display='none'" class="topright">x</button>
+            <p>
+            Search by username : 
+            <input type="text" ng-model="search.username"/>
+            </p>
+
         <table>
           <tr>
+            <th>Avatar</th>
             <th>Noms</th>
             <th>Montants</th> 
             <th>Descriptions</th>
@@ -53,45 +62,48 @@
             <th>Concernant</th>
             <th>Parts</th>
           </tr>
-              <tr  ng-repeat="user in users | filter:test">
-                <td>{{user.username}}</td>
-                <td>$20</td>
-                <td>de la terre</td>
-                <td>00/00/00</td>
-                <td><a href="#">Machin</a> et <a href="#">Crapule</a></td>
-                <td>$15</td>
-              </tr>
+
+            <tr ng-repeat="user in usersData | filter:search">
+              <td>{{user.usercolor}}</td>
+              <td>{{user.username}}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
         </table>
-        </div> 
+      </div> 
 
-        <div id="details" class="tabcontent">
-            <button onclick="this.parentElement.style.display='none'" class="topright">x</button>
-            <table>
-              <tr>
-                <th>nom</th>
-                <th>details</th>
-                <th>date</th>
-                <th>total</th>
-              </tr>
-                <tr>
-                  <td>tintin</td>
-                  <td>20</td>
-                  <td>00/00/00</td>
-                  <td>160</td>
-                </tr>
-            </table>
-          </div>
-
-        <div id="equilibre" class="tabcontent">
-            <button onclick="this.parentElement.style.display='none'" class="topright">x</button>
-              <div id="bloc">
-              </div>  
-        </div>      
+      <div id="equilibre" class="tabcontent">
+          <button onclick="this.parentElement.style.display='none'" class="topright">x</button>
+              <p>
+              Search : 
+              <input type="text" ng-model="searchText" />
+              </p>
+            <div id="bloc">
+            </div>  
+      </div>      
     </div>  
 
 
         <div id="optbtn">
-          <button>Ajouter User(s)</button>
+          <button class="add">Ajouter User(s)</button>
+
+            <div id="addModal" class="modal">
+              
+              <div class="modal-content">
+                <span class="closeModal">x</span>
+                  <form class="addUsers">
+                    <fieldset>
+                      <legend>Ajouter User(s) :</legend>
+                        Username : </br>
+                      <input type="text" required="required"> </br>
+                      <input type="submit" value="Submit">    
+                    </fieldset>  
+                  </form>  
+              </div>
+            </div>
+
           <button>Modifier compte</button>
         </div>              
 </div>
@@ -104,6 +116,7 @@
    <script src="lib/angular-filter.min.js"></script>
    <script src="js/app.js"></script>
    <script src="js/script.js"></script> <!-- show/hide div -->
+   <script src="js/addusers.js"></script> 
 </body>
 
 </html>
